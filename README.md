@@ -4,6 +4,8 @@
 ##Cada arquivo que aqui se encontra se refere a cada questão da prova.##
 
  GUIA 
+
+
 ##prova-primeira-questao >  Questão(ões): 1.1 (a, b, c e d), 1.2 (a, b, c e d), 1.3 (a, b, c e d) e 1.4 (a, b, c e d)##
 
 ##prova-segunda-questao >  Questão(ões): 2.2 (escolha única)##
