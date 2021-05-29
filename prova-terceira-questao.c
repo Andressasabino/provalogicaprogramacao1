@@ -7,7 +7,7 @@ int main()
     setlocale(LC_ALL, "portuguese");
 
     // variáveis sobre a pessoa
-    float altura, peso, imc, pesoIdeal, x;
+    float altura, peso, pesoIdeal, x;
     char sexo;
 
     // questão em si
@@ -23,24 +23,29 @@ int main()
     printf("Peso (Em kg): ");
     scanf("%f", &peso);
 
-    imc = peso / (altura * altura);
-    // imc ideal = (24,9 + 18,5)/2 = 21,7
-    // peso ideal = imc ideal * altura * altura
+    // m = (72.7 * altura) - 58
+    // f = (62.1 * altura) - 44.7
 
-    printf("\nIMC: %.2f", imc);
-
-    pesoIdeal = 21.7 * altura * altura;
-
-    if (imc < 18.5)
+    // verificando o peso ideal
+    if (sexo == 'M' || sexo == 'm')
     {
-        x = pesoIdeal - peso;
-        printf("\nVocê está %.2fkg abaixo do seu peso ideal.", x);
-    } else if (imc >= 18.5 && imc <= 24.9)
+        pesoIdeal = (72.7 * altura) - 58;
+    } else if (sexo == 'F' || sexo == 'f')
     {
-        printf("\nVocê está no seu peso ideal");
-    } else if (imc > 24.9)
+        pesoIdeal = (62.1 * altura) - 44.7;
+    }
+
+    // verificando as condições do peso
+    if (peso == pesoIdeal)
+    {
+        printf("Você está no seu peso ideal.");
+    } else if (peso > pesoIdeal)
     {
         x = peso - pesoIdeal;
-        printf("\nVocê está %.2fkg acima do seu peso ideal.", x);
+        printf("Você está a %.2fkg acima do seu peso ideal.", x);
+    } else if (peso < pesoIdeal)
+    {
+        x = pesoIdeal - peso;
+        printf("Você está a %.2fkg abaixo do seu peso ideal.", x);
     }
 }
